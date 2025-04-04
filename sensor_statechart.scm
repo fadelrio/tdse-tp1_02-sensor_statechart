@@ -17,10 +17,10 @@
         "z": 1,
         "attrs": {
           "name": {
-            "text": "sensor_statechart Export"
+            "text": "sensor_statechart Export Export"
           },
           "specification": {
-            "text": "@EventDriven\n@SuperSteps(no)\n\ninterface: \n    in event EV_BTN_XX_UP\n    in event EV_BTN_XX_DOWN\n\n"
+            "text": "@EventDriven\n@SuperSteps(no)\n\ninterface: \n    in event EV_BTN_XX_UP\n    in event EV_BTN_XX_DOWN\n    var temp : integer\n\n"
           }
         }
       },
@@ -129,10 +129,14 @@
           {
             "attrs": {
               "text": {
-                "text": "EV_BTN_XX_DOWN"
+                "text": "EV_BTN_XX_DOWN [temp == 0]"
               }
             },
-            "position": {}
+            "position": {
+              "distance": 0.5817723619106544,
+              "offset": -18,
+              "angle": 0
+            }
           },
           {
             "attrs": {
@@ -196,12 +200,12 @@
           {
             "attrs": {
               "text": {
-                "text": "after 50 ms"
+                "text": "after 1 ms [temp > 0] / temp-- "
               }
             },
             "position": {
-              "distance": 0.4771798330540161,
-              "offset": 13,
+              "distance": 0.5456391090170567,
+              "offset": 14,
               "angle": 0
             }
           },
@@ -268,7 +272,7 @@
           {
             "attrs": {
               "text": {
-                "text": "EV_BTN_XX_UP"
+                "text": "EV_BTN_XX_UP/ temp = 2500"
               }
             },
             "position": {}
@@ -338,12 +342,12 @@
           {
             "attrs": {
               "text": {
-                "text": "after 50 ms"
+                "text": "after 1 ms [temp > 0] / temp--"
               }
             },
             "position": {
               "distance": 0.4476229295567115,
-              "offset": 13,
+              "offset": 33,
               "angle": 0
             }
           },
@@ -353,7 +357,7 @@
                 "opacity": 1
               },
               "label": {
-                "text": "1",
+                "text": "2",
                 "fill": "#555555"
               },
               "circleBody": {
@@ -371,13 +375,13 @@
         ],
         "id": "032fae01-351d-44dd-8b68-e48de9e9ec25",
         "z": 28,
-        "parent": "ff7ccc36-b247-452a-becf-2ddfce20e5f9",
         "vertices": [
           {
             "x": 674.01,
             "y": 476
           }
         ],
+        "parent": "ff7ccc36-b247-452a-becf-2ddfce20e5f9",
         "attrs": {}
       },
       {
@@ -625,7 +629,7 @@
           {
             "attrs": {
               "text": {
-                "text": "EV_BTN_XX_UP"
+                "text": "EV_BTN_XX_UP [temp == 0]"
               }
             },
             "position": {}
@@ -692,10 +696,14 @@
           {
             "attrs": {
               "text": {
-                "text": "EV_BTN_XX_UP"
+                "text": "EV_BTN_XX_UP [temp == 0]"
               }
             },
-            "position": {}
+            "position": {
+              "distance": 0.7745560161745405,
+              "offset": 44.8819203045467,
+              "angle": 0
+            }
           },
           {
             "attrs": {
@@ -753,10 +761,14 @@
           {
             "attrs": {
               "text": {
-                "text": "EV_BTN_XX_DOWN"
+                "text": "EV_BTN_XX_DOWN / temp = 2500"
               }
             },
-            "position": {}
+            "position": {
+              "distance": 0.494635272376168,
+              "offset": -42,
+              "angle": 0
+            }
           },
           {
             "attrs": {
@@ -784,7 +796,7 @@
         "z": 38,
         "vertices": [
           {
-            "x": 1094,
+            "x": 1135,
             "y": 242
           }
         ],
@@ -885,6 +897,9 @@
           },
           {
             "attrs": {
+              "root": {
+                "opacity": 1
+              },
               "label": {
                 "text": "1",
                 "fill": "#555555"
